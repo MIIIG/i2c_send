@@ -9,6 +9,12 @@ Simple I2C send application for NuttX that sends a hex value to an I2C device.
 3. `CONFIG_I2C_SEND=y` - Enable this specific example application
 
 ## How to Build
+Copy i2_send to apps in nuttxspace
+Structure
+/nuttxspace
+- /nuttx
+- /apps/i2c_send
+Build nuttx
 ```Bash
 make
 ```
