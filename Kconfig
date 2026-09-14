@@ -1,0 +1,30 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config I2C_SEND
+	#bool "I2C Hex Send"
+	tristate "I2c Hex Send"
+	default n
+	---help---
+		This option enables the I2C Hex Send Example.
+
+if I2C_SEND
+
+config I2C_SEND_PROGNAME
+	string "i2c_send"
+	default "i2c_send"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+config I2C_SEND_PRIORITY
+	int "I2c Send task priority"
+	default 100
+
+config I2C_SEND_STACKSIZE
+	int "I2C send stack size"
+	default DEFAULT_TASK_STACKSIZE
+
+endif

@@ -1,19 +1,9 @@
-CC = gcc
-CFLAGS = -Wall -g
-LDFLAGS =
+include $(APPDIR)/Make.defs
 
-TARGET = nuttx_i2c_app
+PROGNAME  = $(CONFIG_I2C_SEND_PROGNAME)
+PRIORITY  = $(CONFIG_I2C_SEND_PRIORITY)
+STACKSIZE = $(CONFIG_I2C_SEND_STACKSIZE)
 
-SRCS = nuttx_i2c_app.c
-OBJS = $(SRCS:.c=.o)
+MAINSRC = i2c_send.c
 
-all: $(TARGET)
-
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-clean:
-	rm -f $(OBJS) $(TARGET)
+include $(APPDIR)/Application.mk

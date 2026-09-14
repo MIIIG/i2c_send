@@ -1,0 +1,3 @@
+ifneq ($(CONFIG_I2C_SEND),)
+CONFIGURED_APPS += $(APPDIR)/i2c_send
+endif
